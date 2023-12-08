@@ -80,4 +80,22 @@ RSpec.describe "Cats", type: :request do
       expect(updated_cat.name).to eq "Buster"
     end
   end
+
+  describe "cannot create a cat witout valid attributes" do
+    it " can't create cat without a name" do 
+      cat_params = {
+        cat: {
+          age: 2,
+          enjoys: 'Barbeque',
+          image: 'bbqandcat.jpg'
+        }
+      }
+      post '/cats', params: cat_params
+
+      cat = JSON.parse(response.body)
+      expect(response).to have_http_status(422)
+      expect(cat['name']).to include "can't be blank"
+    end
+  end
+
 end
