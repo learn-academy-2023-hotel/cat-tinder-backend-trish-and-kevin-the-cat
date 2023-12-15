@@ -3,7 +3,7 @@ cats = [
             name: 'Kevin',
             age: 9,
             enjoys: 'Talking to the dogs walking by the window',
-            image: 'https://c2.peakpx.com/wallpaper/591/784/17/cat-animal-pet-cat-face-head-black-wallpaper-preview.jpg'
+            image: 'https://upload.wikimedia.org/wikipedia/commons/e/e4/Tuxedo_cat_Vladimir_124.jpg'
           },
           { 
             name: 'Geppetto',
