@@ -5,8 +5,8 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'cat-tinder-frontend.onrender.com'  # <- change this to allow requests from any domain while in development.
-
+    # origins 'cat-tinder-frontend.onrender.com'  # <- change this to allow requests from any domain while in development.
+    origins '*'
     resource '*',
       headers: :any,
       methods: [:get, :post, :put, :patch, :delete, :options, :head]
