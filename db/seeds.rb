@@ -1,4 +1,7 @@
-cats = [
+user1 = User.where(email: 'test1@example.com').first_or_create(password:'password', password_confirmation:'password')
+user2 = User.where(email: 'test2@example.com').first_or_create(password:'password', password_confirmation:'password')
+
+user1_cats = [
           { 
             name: 'Kevin',
             age: 9,
@@ -10,7 +13,10 @@ cats = [
             age: 8,
             enjoys: 'being outside in the sun',
             image: 'https://www.publicdomainpictures.net/pictures/200000/nahled/ragdoll-cat-with-green-eyes-14766395657Vf.jpg'
-          },
+          }
+        ]
+
+user2_cats =[        
           { 
             name: 'Priscilla',
             age: 13,
@@ -20,7 +26,12 @@ cats = [
 ]
 
 
-cats.each do |cat|
-  Cat.create cat
+user1_cats.each do |cat|
+  user1.cats.create cat
+  puts "creating cat #{cat}"
+end
+
+user2_cats.each do |cat|
+  user2.cats.create cat
   puts "creating cat #{cat}"
 end
